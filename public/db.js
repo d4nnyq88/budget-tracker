@@ -1,3 +1,5 @@
+// Code from Unit 18 Mini Project (activity 26)
+
 let db;
 let budgetVersion;
 
@@ -13,6 +15,7 @@ request.onupgradeneeded = function (e) {
   console.log(`DB Updated from version ${oldVersion} to ${newVersion}`);
 
   db = e.target.result;
+  console.log("db: ", db);
 
   if (db.objectStoreNames.length === 0) {
     db.createObjectStore('BudgetStore', { autoIncrement: true });
